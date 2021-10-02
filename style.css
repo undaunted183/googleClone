@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: #262626;
+  text-decoration: none;
+}
+
+.container {
+  margin: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 10px;
+  align-items: center;
+}
+/*this class is created to target right side of nav bar, the apps icon disturbs the alignment of whole nav elements. so, putting all three right side elements of nav in flex would avoid the alignment hassle*/
+.flexyUl {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Flex for nav and footer */
+nav,
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+nav li,
+footer li {
+  display: inline;
+  padding: 10px;
+}
+
+/*cancelling padding of right side of nav to allign it to left side */
+.flexyUl li {
+  padding: 0px;
+}
+
+/* maintaing space between elements of right side of nav by targetting a tag, because targetting li would push it vertically downward to screen and thus not align it to the left side of nav bar */
+.flexyUl li a {
+  padding: 20px;
+}
+
+footer li {
+  padding: 10px 15px;
+}
+
+nav li a:hover,
+footer li a:hover {
+  text-decoration: underline;
+}
+
+/*align icon to text */
+
+ul li i {
+  
+  padding: 7px;
+  border: 1px #fff;
+  border-radius: 20px;
+}  
+
+ul li i:hover {
+  cursor: pointer;
+  background: rgba(164, 165, 173, 0.3);
+}
+
+main img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 25%;
+}
+main div.input-field {
+  margin-top: 30px;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+  height: 50px;
+  border: 1px solid #e3e1da;
+  border-radius: 50px;
+}
+
+main div.input-field:hover {
+  box-shadow: 2px 2px 2px rgba(77, 78, 92, 0.2),
+    -1px -1px 1px rgba(77, 78, 92, 0.1);
+}
+
+main div input {
+  width: 350px;
+}
+
+main div i {
+  padding: 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+main div.middle {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 7px 20px;
+  margin: 20px;
+  border: 1px solid #fff;
+}
+
+.btn:hover {
+  border: 1px solid #e3e1da;
+  border-radius: 5px;
+}
+/* this code fix the footer to the bottom of the page. but keep in mind to define the vh of parent element to be able to define top:95%, in this case body is defined 100% vh*/
+footer {
+  background: rgba(0, 0, 0, 0.07);
+  padding: 15px 0;
+  position: sticky;
+  top: 95%;
+}
+
+/*media queries */
+@media (max-width: 650px) {
+  
+   footer {
+    display: block;
+   }
+
+  .footer-left,
+  .footer-right{
+    display: flex;
+    justify-content: space-around;
+      
+}
